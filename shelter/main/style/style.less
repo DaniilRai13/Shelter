@@ -1,10 +1,29 @@
 // compress: true
 
-html{
+html,
+body {
     height: 100%;
-    body{
-        margin:0;
-    }
 }
 
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+@import url("blocks/startScreen.less");
 @import url("blocks/header.less");
+@import url("blocks/notOnly.less");
