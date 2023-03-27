@@ -31,6 +31,11 @@
             border-radius: 50%;
             border: 2px #F1CDB3 solid;
             cursor: pointer;
+            transition: background .2s;
+
+            &:hover {
+                background: #F1CDB3;
+            }
         }
 
         .slider_arrow_left {
@@ -50,9 +55,11 @@
             .pets_item {
                 background: #ffffff;
                 padding-bottom: 1.87rem;
+                border-radius: 0.6em;
 
                 .pets_item_img {
                     margin-bottom: 1.87rem;
+                    border-radius: 0.6em;
                 }
 
                 .pets_item_name {
@@ -67,10 +74,21 @@
 
                 .pets_slider_btn {
                     padding: 15px 45px;
-                    border: 1px #F1CDB3 solid;
+                    border: 2px #F1CDB3 solid;
                     border-radius: 2.2rem;
                     background: #fff;
+                    transition:  .2s;
                     cursor: pointer;
+                }
+
+                &:hover {
+                    cursor: pointer;
+                    // box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+                    .pets_slider_btn {
+                        border-color: #FDDCC4;
+                        background: #FDDCC4;
+                    }
                 }
             }
 

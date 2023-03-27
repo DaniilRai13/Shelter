@@ -37,9 +37,12 @@
                     background: #ffffff;
                     padding-bottom: 1.87rem;
                     margin-bottom: 1.87rem;
+                    border-radius: 0.6rem;
 
                     .pets_item_img {
                         margin-bottom: 1.87rem;
+                        border-radius: 0.6em;
+
                     }
 
                     .pets_item_name {
@@ -58,9 +61,18 @@
                         border-radius: 2.2rem;
                         background: #fff;
                         cursor: pointer;
+                        transition: background .2s;
+
                     }
-                    &:hover{
-                        
+
+                    &:hover {
+                        cursor: pointer;
+                        // box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+                        .pets_slider_btn {
+                            border-color: #FDDCC4;
+                            background: #FDDCC4;
+                        }
                     }
                 }
 
@@ -99,8 +111,10 @@
                     background: #F1CDB3;
                     border-color: #F1CDB3;
                 }
-                .right,.double_right{
-                    color:#292929;
+
+                .right,
+                .double_right {
+                    color: #292929;
                     border-color: #F1CDB3;
                 }
             }
