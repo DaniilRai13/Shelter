@@ -6,62 +6,67 @@
     justify-content: space-between;
     align-items: center;
     padding: 60px 0;
-}
 
-.header_logo_title {
-    font-family: 'Georgia';
-    font-size: 2rem;
-    color: #F1CDB3;
-    margin-bottom: 0.65rem;
-}
+    .header_logo {
 
-.header_logo_subtitle {
-    font-family: 'Arial';
-    font-size: 0.85rem;
-    line-height: 0.95rem;
-    color: #FFFFFF;
-    letter-spacing: 0.1em;
-}
+        .header_logo_title {
+            margin-bottom: 0.65rem;
 
-.nav ul {
-    display: flex;
+            a {
+                font-family: 'Georgia';
+                font-size: 2rem;
+                color: #F1CDB3;
+                text-decoration: none;
+            }
+        }
 
-}
-
-.nav ul li {
-    list-style-type: none;
-    margin-right: 1.25rem;
-}
-
-.nav ul li a {
-    position: relative;
-    font-family: 'Arial';
-    font-size: 0.95rem;
-    line-height: 160%;
-    color: #CDCDCD;
-    text-decoration: none;
-    margin-left: 2.18rem;
-}
-
-.nav ul li a::before {
-    content: "";
-    position: absolute;
-    bottom: -20%;
-    left: 0;
-    width: 0;
-    height: 0.125rem;
-    background-color: #fff;
-    transition: width .2s linear;
-}
-
-@media (hover:hover) {
-    .nav li a:hover {
-        color: #FFFFFF;
-
+        .header_logo_subtitle {
+            font-family: 'Arial';
+            font-size: 0.85rem;
+            line-height: 0.95rem;
+            color: #FFFFFF;
+            letter-spacing: 0.1em;
+        }
     }
 
-    .nav li a:hover::before {
-        width: 100%;
+    .nav {
+        ul {
+            display: flex;
+
+            li {
+                list-style-type: none;
+                margin-right: 1.25rem;
+
+                a {
+                    position: relative;
+                    font-family: 'Arial';
+                    font-size: 0.95rem;
+                    line-height: 160%;
+                    color: #CDCDCD;
+                    text-decoration: none;
+                    margin-left: 2.18rem;
+
+                    &:hover {
+                        color: #FAFAFA;
+                    }
+
+                }
+
+                .active {
+                    color: #FAFAFA;
+
+                    &:before {
+                        content: "";
+                        position: absolute;
+                        bottom: -20%;
+                        left: 0;
+                        width: 100%;
+                        height: 0.125rem;
+                        background: #F1CDB3;
+                    }
+                }
+
+            }
+        }
     }
-    
 }
