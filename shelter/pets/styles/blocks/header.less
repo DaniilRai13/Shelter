@@ -1,0 +1,67 @@
+// main: ../style.less
+.header_inner {
+    display: flex;
+    font-style: normal;
+    font-weight: 400;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px 0;
+
+    a {
+        text-decoration: none;
+        .header_logo {
+            .header_logo_title {
+                font-family: 'Georgia';
+                font-size: 2rem;
+                color: #545454;
+                margin-bottom: 0.65rem;
+            }
+
+            .header_logo_subtitle {
+                font-family: 'Arial';
+                font-size: 0.85rem;
+                line-height: 0.95rem;
+                color: #545454;
+                letter-spacing: 0.1em;
+            }
+        }
+    }
+
+
+    .nav {
+        ul {
+            display: flex;
+
+            li {
+                list-style-type: none;
+                margin-right: 1.25rem;
+
+                a {
+                    position: relative;
+                    font-family: 'Arial';
+                    font-size: 0.95rem;
+                    line-height: 160%;
+                    color: #545454;
+                    text-decoration: none;
+                    margin-left: 2.18rem;
+
+                    &:hover {
+                        color: #292929;
+
+                    }
+
+                }
+
+                .active::before {
+                    content: "";
+                    position: absolute;
+                    bottom: -20%;
+                    left: 0;
+                    width: 100%;
+                    height: 0.125rem;
+                    background: #F1CDB3;
+                }
+            }
+        }
+    }
+}
