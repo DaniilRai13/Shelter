@@ -1,30 +1,33 @@
 //main: ../style.less
-
-.about_pets {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap-reverse;
+.about {
     padding: 5rem 0 6.25rem 0;
 
-    .about_pets_content {
-        margin-left: 7.5rem;
-        width: 23.1rem;
+    .about_pets {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap-reverse;
+        gap: 7.5rem;
 
-        .about_pets_title {
-            font-family: 'Georgia';
-            font-size: 2.18rem;
-            line-height: 130%;
-            letter-spacing: 0.06em;
-            color: #545454;
-            margin-bottom: 25px;
-        }
+        .about_pets_content {
+            width: 26.1rem;
 
-        .about_pets_description {
-            font-family: 'Arial';
-            font-size: 0.95rem;
-            line-height: 160%;
-            color: #4C4C4C;
+            .about_pets_title {
+                width: 83%;
+                font-family: 'Georgia';
+                font-size: 2.18rem;
+                line-height: 130%;
+                letter-spacing: 0.06em;
+                color: #545454;
+                margin-bottom: 25px;
+            }
+
+            .about_pets_description {
+                font-family: 'Arial';
+                font-size: 0.95rem;
+                line-height: 160%;
+                color: #4C4C4C;
+            }
         }
     }
 }
