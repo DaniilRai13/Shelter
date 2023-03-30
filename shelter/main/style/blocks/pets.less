@@ -1,7 +1,7 @@
 // main: ../style.less
 .pets {
     background: #F6F6F6;
-    padding: 5rem 0 7.25rem 0;
+    padding: 5rem 0 6.25rem 0;
 
     .pets_container {
         text-align: center;
@@ -14,7 +14,7 @@
             line-height: 130%;
             text-align: center;
             color: #545454;
-            margin-bottom: 4.3rem;
+            margin-bottom: 3.75rem;
         }
 
         .pets_slider {
@@ -22,11 +22,13 @@
             align-items: center;
             justify-content: space-between;
             width: 100%;
-            margin-bottom: 4.6rem;
+            margin-bottom: 3.75rem;
 
             .slider_arrow_left,
             .slider_arrow_right {
-                padding: 1.375rem 1.188rem;
+                width: 14px;
+                height: 6px;
+                padding: 1.33rem 1.17rem;
                 border-radius: 50%;
                 border: 2px #F1CDB3 solid;
                 cursor: pointer;
@@ -39,17 +41,31 @@
 
             .slider_arrow_left {
                 margin-right: 3.12rem;
+
+                @media @notebook {
+                    margin-right: 0.75rem;
+                }
             }
 
             .slider_arrow_right {
                 transform: rotate(180deg);
                 margin-left: 3.12rem;
+                @media @notebook {
+                    margin-left: 0.75rem;
+                }
             }
 
             .pets_inner {
                 display: flex;
                 justify-content: space-between;
-                width: 100%;
+                width: 990px;
+                overflow: hidden;
+
+                @media (max-width:1200px) {
+                    width: 580px;
+                    column-gap: 35px;
+                }
+                
 
                 .pets_item {
                     background: #ffffff;
@@ -96,6 +112,7 @@
         }
 
         .pets_btn {
+            display: inline-block;
             text-decoration: none;
             color: #292929;
 

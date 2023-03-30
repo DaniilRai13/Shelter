@@ -1,14 +1,18 @@
 // main: ../style.less
 
 .not_only {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: space-between;
-    width: 100%;
     margin-top: 90px;
-    
+
+    @media @notebook {
+        flex-direction: column;
+        row-gap: 100px;
+    }
+
     .not_only_content {
-        width: 28.7rem;
+        width: 28.8rem;
 
         .not_only_title {
             width: 80%;
@@ -21,26 +25,35 @@
 
         .not_only_subtitle {
             font-family: 'Arial';
-            font-size: 0.95rem;
+            font-size: 0.935rem;
             line-height: 160%;
             margin-bottom: 2.6rem;
             color: #CDCDCD;
         }
 
         .not_only_btn {
+            a {
+                text-decoration: none;
+                color: #292929;
+                font-family: 'Georgia';
+                font-size: 1.1rem;
+                letter-spacing: 0.06em;
+                padding: 15px 45px;
+                border: none;
+                border-radius: 2.2rem;
+                background-color: #F1CDB3;
 
-            text-decoration: none;
-            color: #292929;
-            font-family: 'Georgia';
-            font-size: 1.1rem;
-            letter-spacing: 0.06em;
-            padding: 15px 45px;
-            border: none;
-            border-radius: 2.2rem;
-            background-color: #F1CDB3;
+                &:hover {
+                    background: #FDDCC4;
+                }
 
-            &:hover {
-                background: #FDDCC4;
+                @media @notebook {
+                    display: inline-block;
+                }
+            }
+
+            @media @notebook {
+                text-align: center;
             }
         }
 
@@ -49,7 +62,14 @@
     .not_only_image {
         height: auto;
         width: 59%;
-        
+
+        @media @notebook {
+            width: 620px;
+        }
+
+        @media @table {
+            width: 82%;
+        }
     }
 
 }

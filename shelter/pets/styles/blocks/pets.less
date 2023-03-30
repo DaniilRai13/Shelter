@@ -26,27 +26,25 @@
                 display: flex;
                 flex-wrap: wrap;
                 justify-content: center;
-                grid-gap: 20px;
+                row-gap: 30px;
+                column-gap: 40px;
                 width: 100%;
-                height: 940px;
                 overflow: hidden;
+                padding: 15px 0;
+
 
                 .pets_item {
                     background: #ffffff;
-                    padding-bottom: 1.87rem;
-                    margin-bottom: 1.87rem;
                     border-radius: 0.6rem;
 
                     .pets_item_img {
                         margin-bottom: 1.87rem;
                         border-radius: 0.6em;
-
                     }
 
                     .pets_item_name {
                         font-family: 'Georgia';
-                        font-size: 1.25rem;
-                        line-height: 1.5rem;
+                        font-size: 1.2rem;
                         text-align: center;
                         letter-spacing: 0.06em;
                         color: #545454;
@@ -54,18 +52,20 @@
                     }
 
                     .pets_slider_btn {
+                        display: inline-block;
                         padding: 15px 45px;
+                        font-size: 1.05rem;
                         border: 1px #F1CDB3 solid;
                         border-radius: 2.2rem;
                         background: #fff;
                         cursor: pointer;
                         transition: background .2s;
-
+                        margin-bottom: 1.87rem;
                     }
 
                     &:hover {
                         cursor: pointer;
-                        
+
                         .pets_slider_btn {
                             border-color: #FDDCC4;
                             background: #FDDCC4;

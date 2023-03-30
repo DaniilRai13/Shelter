@@ -35,10 +35,10 @@ header {
     .nav {
         ul {
             display: flex;
-
+            padding: 0;
             li {
                 list-style-type: none;
-                margin-right: 1.25rem;
+                margin-left: 2.18rem;
 
                 a {
                     position: relative;
@@ -47,13 +47,16 @@ header {
                     line-height: 160%;
                     color: #545454;
                     text-decoration: none;
-                    margin-left: 2.18rem;
 
                     &:hover {
                         color: #292929;
 
                     }
 
+                }
+
+                &:first-child {
+                    margin-left: 0;
                 }
 
                 .active::before {
