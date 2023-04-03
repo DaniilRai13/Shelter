@@ -14,7 +14,11 @@
             line-height: 130%;
             letter-spacing: 0.06em;
             color: #545454;
-            margin-bottom: 3.75rem;
+            margin-bottom: 60px;
+
+            @media @table {
+                margin-bottom: 60px;
+            }
         }
 
         .help_inner {
@@ -23,13 +27,21 @@
             align-items: center;
             flex-wrap: wrap;
             row-gap: 3.43rem;
+            column-gap: 120px;
+
+            @media @table {
+                column-gap:63px
+            }
 
             .help_item {
                 text-align: center;
-                width: 13rem;
+
+                @media @table {
+                    width: 167px;
+                }
 
                 .help_item_img {
-                    margin-bottom: 1.75rem;
+                    margin-bottom: 1.5rem;
                 }
 
                 .help_item_name {

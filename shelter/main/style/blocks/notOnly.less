@@ -1,18 +1,30 @@
 // main: ../style.less
 
 .not_only {
-    display: inline-flex;
+    display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 90px;
+    margin-top: 89px;
 
     @media @notebook {
         flex-direction: column;
         row-gap: 100px;
     }
 
+    @media @table {
+        margin-top: 59px;
+    }
+
     .not_only_content {
         width: 28.8rem;
+        margin-top: -79px;
+        margin-right: 20px;
+
+        @media @table {
+            width: 468px;
+            margin-top: 0;
+            margin-left: 27px;
+        }
 
         .not_only_title {
             width: 80%;
@@ -29,16 +41,23 @@
             line-height: 160%;
             margin-bottom: 2.6rem;
             color: #CDCDCD;
+
+            @media @table {
+                font-size: 15px;
+                line-height: 160%;
+                margin-bottom: 42px;
+            }
         }
 
         .not_only_btn {
             a {
+                display: inline-block;
                 text-decoration: none;
                 color: #292929;
                 font-family: 'Georgia';
                 font-size: 1.1rem;
                 letter-spacing: 0.06em;
-                padding: 15px 45px;
+                padding: 15px 43px;
                 border: none;
                 border-radius: 2.2rem;
                 background-color: #F1CDB3;
@@ -49,6 +68,11 @@
 
                 @media @notebook {
                     display: inline-block;
+                }
+
+                @media @table {
+                    padding: 15px 43px;
+                    margin-left: -10px;
                 }
             }
 
@@ -61,14 +85,20 @@
 
     .not_only_image {
         height: auto;
-        width: 59%;
+        width: 698px;
 
         @media @notebook {
             width: 620px;
         }
 
         @media @table {
-            width: 82%;
+            width: 569px;
+            position: relative;
+            left: 75px;
+            // margin-left: 142px;
+        }
+        @media @table-sm {
+            left: 0;
         }
     }
 

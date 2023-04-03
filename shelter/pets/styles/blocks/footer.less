@@ -3,15 +3,36 @@ footer {
     background-image: url('./../images/start-screen-gradient-background.jpg');
     background-size: cover;
     padding-top: 2.5rem;
+    @media @table {
+        padding-top: 50px;
+    }
 
     .footer_inner {
         display: flex;
         justify-content: space-between;
         align-items: center;
         width: 100%;
+        @media @table {
+            justify-content: center;
+            flex-wrap: wrap;
+            column-gap: 60px;
+        }
+
         .footer_contacts {
             width: 300px;
-            margin-right: 0.7rem;
+            margin-right: 0.6rem;
+            &:first-child{
+                position: relative;
+                top: -20px;
+                @media @table{
+                    left: 19px;
+                }
+            }
+            &:nth-child(2){
+                position: relative;
+                top: -21px;
+                right: 11px;
+            }
             .contacts_title {
                 font-family: 'Georgia';
                 font-size: 2.18rem;
@@ -23,7 +44,7 @@ footer {
             .contacts_info {
                 display: flex;
                 align-items: center;
-                margin-top: 2.5rem;
+                margin-top: 32px;
 
                 img {
                     margin-right: 1.25rem;
@@ -37,6 +58,13 @@ footer {
                     letter-spacing: 0.06em;
                     color: #F1CDB3;
                 }
+            }
+            .contacts_info.phone{
+                margin-top: 40px;
+                
+            }
+            @media @table{
+                margin-bottom: 44px;
             }
         }
     }

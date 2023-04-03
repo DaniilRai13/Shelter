@@ -3,15 +3,55 @@
 footer {
     background-image: url('./../images/start-screen-gradient-background.jpg');
     background-size: cover;
-    padding-top: 2.5rem;
+    padding-top: 40px;
+
+    @media @table {
+        padding-top: 30px;
+    }
 
     .footer_inner {
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
 
+        @media @table {
+            position: relative;
+            left: -3px;
+        }
+
+        @media @table {
+            justify-content: center;
+            flex-wrap: wrap;
+            column-gap: 60px;
+        }
+
         .footer_contacts {
-            width: 30%;
+            margin-right: 160px;
+
+            &:first-child {
+                position: relative;
+                top: -20px;
+                margin-right: 160px;
+
+                @media @table {
+                    position: relative;
+                    top: -2px;
+                    margin-right: 0;
+
+                }
+            }
+
+            &:nth-child(2) {
+                position: relative;
+                top: 3px;
+            }
+
+            @media @table {
+                width: auto;
+                margin-bottom: 70px;
+                margin-right: 0;
+
+            }
 
             .contacts_title {
                 font-family: 'Georgia';
@@ -19,6 +59,7 @@ footer {
                 line-height: 130%;
                 letter-spacing: 0.06em;
                 color: #FFFFFF;
+
             }
 
             .contacts_info {
@@ -26,9 +67,13 @@ footer {
                 align-items: center;
                 margin-top: 2.5rem;
 
+                @media @table {
+                    margin-top: 35px;
+                }
+
                 img {
                     margin-right: 1.25rem;
-                    
+
                 }
 
                 a {
@@ -39,6 +84,21 @@ footer {
                     text-decoration: none;
                     color: #F1CDB3;
                 }
+            }
+
+            .contacts_info.phone {
+                @media @table {
+                    margin-top: 37px;
+                }
+
+            }
+
+            .contacts_info.map {
+                margin-top: 33px;
+                @media @table {
+                    margin-top: 31px;
+                }
+
             }
         }
     }

@@ -9,12 +9,24 @@
         justify-content: center;
         align-items: center;
 
+        @media @notebook {
+            flex-wrap: wrap-reverse;
+        }
+
         .addition_inner_img {
-            margin-right: 0.93rem;
+            margin-right: 34px;
+
+            @media @table {
+                margin-right: 0;
+            }
         }
 
         .addition_info {
             width: 23.75rem;
+
+            @media @table {
+                margin-bottom: 60px;
+            }
 
             .addition_info_title {
                 width: 18.75rem;
@@ -39,9 +51,11 @@
                 display: flex;
                 align-items: center;
                 background: #F1CDB3;
-                border-radius: 0.3rem;
+                border-radius: 0.6rem;
                 padding: 0.625rem 0.935rem;
                 margin-bottom: 1.21rem;
+                width: 319px;
+                letter-spacing: 0.07em;
 
                 .card_img {
                     margin-right: 0.935rem;

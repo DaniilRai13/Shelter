@@ -15,9 +15,11 @@
             text-align: center;
             color: #545454;
             margin-bottom: 3.75rem;
+            letter-spacing: 0.06em;
         }
 
         .pets_slider {
+            position: relative;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -28,7 +30,7 @@
             .slider_arrow_right {
                 width: 14px;
                 height: 6px;
-                padding: 1.33rem 1.17rem;
+                padding: 1.3rem 1.15rem;
                 border-radius: 50%;
                 border: 2px #F1CDB3 solid;
                 cursor: pointer;
@@ -36,6 +38,12 @@
 
                 &:hover {
                     background: #F1CDB3;
+                }
+                @media @mobile{
+                    position: absolute;
+                    bottom: -65px;
+                    left: 50%;
+                    transform: translateX(-50%);
                 }
             }
 
@@ -50,6 +58,7 @@
             .slider_arrow_right {
                 transform: rotate(180deg);
                 margin-left: 3.12rem;
+
                 @media @notebook {
                     margin-left: 0.75rem;
                 }
@@ -63,17 +72,24 @@
 
                 @media (max-width:1200px) {
                     width: 580px;
-                    column-gap: 35px;
+                    column-gap: 39px;
                 }
-                
+                @media @table-sm {
+                    width: 270px;
+                    margin: 0 auto;
+                }
 
                 .pets_item {
                     background: #ffffff;
                     padding-bottom: 1.87rem;
                     border-radius: 0.6em;
 
+                    @media @table {
+                        padding-bottom: 0;
+                    }
+
                     .pets_item_img {
-                        margin-bottom: 1.87rem;
+                        margin-bottom: 1.5rem;
                         border-radius: 0.6em;
                     }
 
@@ -85,15 +101,26 @@
                         letter-spacing: 0.06em;
                         color: #545454;
                         margin-bottom: 1.87rem;
+
+
                     }
 
                     .pets_slider_btn {
-                        padding: 15px 45px;
+                        padding: 14px 50px;
                         border: 2px #F1CDB3 solid;
                         border-radius: 2.2rem;
                         background: #fff;
+                        font-size: 17px;
                         transition: .2s;
                         cursor: pointer;
+
+                        @media @table {
+                            padding: 14px 44px;
+                            margin-bottom: 1.8rem;
+                            letter-spacing: 0.06em;
+                        }
+
+                        
                     }
 
                     &:hover {
@@ -103,6 +130,7 @@
                         .pets_slider_btn {
                             border-color: #FDDCC4;
                             background: #FDDCC4;
+
                         }
                     }
                 }

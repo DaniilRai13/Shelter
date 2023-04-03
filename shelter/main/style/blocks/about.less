@@ -11,7 +11,11 @@
         row-gap: 5rem;
 
         .about_pets_content {
-            width: 27rem;
+            width: 426px;
+
+            @media @table {
+                width: 430px;
+            }
 
             .about_pets_title {
                 width: 83%;
@@ -21,6 +25,10 @@
                 letter-spacing: 0.06em;
                 color: #545454;
                 margin-bottom: 25px;
+
+                @media @table {
+                    margin-bottom: 28px;
+                }
             }
 
             .about_pets_description {
