@@ -1,7 +1,9 @@
 //main: ../style.less
 .about {
     padding: 5rem 0 6.25rem 0;
-
+    @media @mobile-sm{
+        padding: 42px 10px ;
+    }
     .about_pets {
         display: flex;
         align-items: center;
@@ -9,7 +11,9 @@
         flex-wrap: wrap-reverse;
         column-gap: 7.5rem;
         row-gap: 5rem;
-
+        @media @mobile-sm{
+            row-gap: 38px ;
+        }
         .about_pets_content {
             width: 426px;
 
@@ -29,6 +33,12 @@
                 @media @table {
                     margin-bottom: 28px;
                 }
+
+                @media @mobile-sm {
+                    font-size: 25px;
+                    text-align: center;
+                    margin: 0 auto 25px auto;
+                }
             }
 
             .about_pets_description {
@@ -36,6 +46,19 @@
                 font-size: 0.935rem;
                 line-height: 160%;
                 color: #4C4C4C;
+
+                @media @mobile-sm {
+                    font-size: 15px;
+                    text-align: justify;
+                    letter-spacing: 0.3px;
+                }
+            }
+            
+        }
+        .about_pets_image{
+            @media @mobile-sm {
+                width: 260px;
+                height: auto;
             }
         }
     }
