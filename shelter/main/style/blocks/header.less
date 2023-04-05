@@ -1,4 +1,7 @@
 // main: ../style.less
+header{
+    padding-top: 30px;
+}
 .header_inner {
     display: flex;
     font-style: normal;
@@ -13,11 +16,17 @@
     .header_logo {
 
         .header_logo_title {
+
             margin-bottom: 0.62rem;
+
+            margin-bottom: 0.625rem;
+
 
             a {
                 font-family: 'Georgia';
                 font-size: 2rem;
+                line-height: 110%;
+                letter-spacing: 0.06em;
                 color: #F1CDB3;
                 text-decoration: none;
                 letter-spacing: 0.06em;
@@ -30,9 +39,10 @@
 
         .header_logo_subtitle {
             font-family: 'Arial';
-            font-size: 0.8rem;
-            line-height: 0.95rem;
+            font-size: 12px;
+            line-height: 0.935rem;
             color: #FFFFFF;
+
             letter-spacing: 0.11em;
             margin-left: 3px;
 
@@ -47,6 +57,10 @@
         display: none;
         @media @table-sm{
             display: block;
+
+            margin-left: 2px;
+            letter-spacing: 0.17em;
+
         }
     }
 
@@ -69,11 +83,14 @@
                 a {
                     position: relative;
                     font-family: 'Arial';
-                    font-size: 0.93rem;
+                    font-size: 0.935rem;
                     line-height: 160%;
                     color: #CDCDCD;
                     text-decoration: none;
+
                     margin-left: 2.3rem;
+
+                    margin-left: 2.25rem;
 
                     &:hover {
                         color: #FAFAFA;
