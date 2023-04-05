@@ -1,7 +1,11 @@
 // main: ../style.less
 .pets {
     background: #F6F6F6;
-    padding: 5rem 0 7.25rem 0;
+    padding: 5rem 0 6.25rem 0;
+
+    @media @mobile-sm {
+        padding: 42px 0;
+    }
 
     .pets_container {
         text-align: center;
@@ -15,19 +19,42 @@
             letter-spacing: 0.06em;
             text-align: center;
             color: #545454;
-            margin-bottom: 3.8rem;
+            margin-bottom: 3.75rem;
+            letter-spacing: 0.06em;
+
+            @media (min-width:320px) and (max-width:560px) {
+                width: 100%;
+                font-size: 28px;
+            }
+
+            @media @mobile-sm {
+                width: 100%;
+                font-size: 25px;
+                text-align: center;
+                margin-bottom: 41px;
+
+            }
+
         }
 
         .pets_slider {
+            position: relative;
             display: flex;
             align-items: center;
             justify-content: space-between;
             width: 100%;
-            margin-bottom: 4.6rem;
+            margin-bottom: 3.75rem;
+            @media (min-width:320px) and (max-width:560px) {
+                margin-bottom: 115px;
+            }
 
             .slider_arrow_left,
             .slider_arrow_right {
-                padding: 1.375rem 1.1rem;
+
+                width: 14px;
+                height: 6px;
+                padding: 1.3rem 1.15rem;
+
                 border-radius: 50%;
                 border: 2px #F1CDB3 solid;
                 cursor: pointer;
@@ -36,29 +63,81 @@
                 &:hover {
                     background: #F1CDB3;
                 }
+
+                @media (min-width:320px) and (max-width:560px) {
+                    position: absolute;
+                    bottom: -72px;
+                    left: 55%;
+                    transform: translateX(-50%);
+                }
+
+                @media @mobile {
+                    bottom: -72px;
+                    left: 59%;
+                    transform: translateX(-50%);
+                }
+
+                @media @mobile-sm {
+                    left: 59%;
+                    transform: translateX(-50%);
+                }
             }
 
             .slider_arrow_left {
-                margin-right: 3.2rem;
+
+                margin-right: 3.12rem;
+                @media (min-width:320px) and (max-width:560px) {
+                    left: 34%;
+                }
+                @media @notebook {
+                    margin-right: 0.75rem;
+                }
+
+                @media @mobile-sm {
+                    left: 84px;
+                }
+
             }
 
             .slider_arrow_right {
                 transform: rotate(180deg);
-                margin-left: 3.1rem;
+                margin-left: 3.12rem;
+
+                @media @notebook {
+                    margin-left: 0.75rem;
+                }
+
             }
 
             .pets_inner {
                 display: flex;
                 justify-content: space-between;
-                width: 100%;
+                width: 990px;
+                overflow: hidden;
+
+                @media (max-width:1200px) {
+                    width: 580px;
+                    column-gap: 39px;
+                }
+
+                @media @table-sm {
+                    width: 270px;
+                    margin: 0 auto;
+                }
 
                 .pets_item {
                     background: #ffffff;
                     padding-bottom: 1.87rem;
                     border-radius: 0.6em;
 
+                    @media @table {
+                        padding-bottom: 0;
+                    }
+
                     .pets_item_img {
-                        margin-bottom: 1.47rem;
+
+                        margin-bottom: 1.5rem;
+
                         border-radius: 0.6em;
                     }
 
@@ -69,18 +148,35 @@
                         text-align: center;
                         letter-spacing: 0.06em;
                         color: #545454;
-                        margin-bottom: 1.79rem;
+
+                        margin-bottom: 1.87rem;
+
+                        @media @mobile-sm {
+                            margin-bottom: 31px;
+
+                        }
                     }
 
                     .pets_slider_btn {
-                        padding: 15px 44px;
-                        font-size: 17px;
-                        letter-spacing: 0.06em;
+                        padding: 14px 50px;
                         border: 2px #F1CDB3 solid;
                         border-radius: 2.2rem;
                         background: #fff;
+                        font-size: 17px;
                         transition: .2s;
                         cursor: pointer;
+
+                        @media @table {
+                            padding: 14px 44px;
+                            margin-bottom: 1.8rem;
+                            letter-spacing: 0.06em;
+                        }
+
+                        @media @mobile-sm {
+                            margin-bottom: 30px;
+                        }
+
+
                     }
 
                     &:hover {
@@ -90,6 +186,7 @@
                         .pets_slider_btn {
                             border-color: #FDDCC4;
                             background: #FDDCC4;
+
                         }
                     }
                 }
@@ -99,6 +196,7 @@
         }
 
         .pets_btn {
+            display: inline-block;
             text-decoration: none;
             color: #292929;
 

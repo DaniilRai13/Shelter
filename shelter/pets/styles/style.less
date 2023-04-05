@@ -24,7 +24,16 @@ p {
     padding-left: 40px;
     padding-right: 40px;
 
+    @media @table{
+        padding:0 30px;
+    }
+
+    @media @mobile-sm{
+        padding: 0 10px;
+    }
+
 }
 @import url("blocks/header.less");
 @import url("blocks/pets.less");
 @import url("blocks/footer.less");
+@import url("blocks/var.less");

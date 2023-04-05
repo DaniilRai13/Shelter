@@ -1,18 +1,86 @@
 //main: ../style.less
-
 footer {
     background-image: url('./../images/start-screen-gradient-background.jpg');
     background-size: cover;
     padding-top: 2.5rem;
 
+    @media @table {
+        padding-top: 50px;
+    }
+
     .footer_inner {
         display: flex;
         align-items: center;
-        column-gap: 160px;
+        width: 100%;
+
+        @media @notebook {
+            justify-content: center;
+            flex-wrap: wrap;
+            column-gap: 60px;
+            row-gap: 20px;
+        }
+
+        @media @table {
+            justify-content: center;
+            flex-wrap: wrap;
+            column-gap: 60px;
+            row-gap: 0px;
+        }
+
+        @media (min-width:320px) and (max-width:739px) {
+            justify-content: center;
+            flex-wrap: wrap;
+            column-gap: 70px;
+        }
 
         .footer_contacts {
-            width: 295px;
-            margin-top: -42px;
+            width: 300px;
+            margin-right: 0.6rem;
+
+            &:first-child {
+                position: relative;
+                top: -20px;
+
+                @media @table {
+                    left: 19px;
+                }
+                @media (min-width:320px) and (max-width:739px) {
+                    display: flex;
+                    flex-direction: column;
+                    left: 0;
+                    margin-right: 0rem;
+                    text-align: center;
+                    justify-content: center;
+                    align-items: center;
+                }
+                @media @mobile-sm {
+                    display: flex;
+                    flex-direction: column;
+                    left: 0;
+                    margin-right: 0rem;
+                    text-align: center;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+            }
+
+            &:nth-child(2) {
+                position: relative;
+                top: -21px;
+                right: 11px;
+                @media (min-width:320px) and (max-width:739px) {
+                    top: -11px;
+                    right: -20px;
+                    margin-right: 0rem;
+                }
+                @media @mobile-sm {
+                    top: -11px;
+                    right: 0;
+                    margin-right: 0rem;
+
+                }
+            }
 
             .contacts_title {
                 font-family: 'Georgia';
@@ -20,51 +88,56 @@ footer {
                 line-height: 130%;
                 letter-spacing: 0.06em;
                 color: #FFFFFF;
+
+                @media @mobile-sm {
+                    font-size: 25px;
+                    text-align: center;
+                    margin: 0 auto;
+                    width: 278px;
+                }
             }
 
             .contacts_info {
                 display: flex;
                 align-items: center;
-                margin-top: 2.5rem;
+                margin-top: 32px;
 
                 img {
                     margin-right: 1.25rem;
-
                 }
 
                 a {
+                    text-decoration: none;
                     font-family: 'Georgia';
                     font-size: 1.25rem;
                     line-height: 115%;
                     letter-spacing: 0.06em;
-                    text-decoration: none;
                     color: #F1CDB3;
                 }
+
+                @media @mobile-sm {
+                    margin-top: 39px;
+                }
+            }
+
+            .contacts_info.phone {
+                margin-top: 40px;
+
+            }
+
+            @media @table {
+                margin-bottom: 44px;
+            }
+
+            @media @mobile-sm {
+                margin-bottom: 29px;
             }
         }
 
-        .footer_contacts.sec {
-            width: 315px;
-            margin-top: -45px;
-
-            .contacts_info {
-                display: flex;
-                align-items: center;
-                margin-top: 2.2rem;
-
-                img {
-                    margin-right: 1.25rem;
-
-                }
-
-                a {
-                    font-family: 'Georgia';
-                    font-size: 1.25rem;
-                    line-height: 115%;
-                    letter-spacing: 0.06em;
-                    text-decoration: none;
-                    color: #F1CDB3;
-                }
+        .footer_img {
+            @media @mobile-sm {
+                width: 262px;
+                height: auto;
             }
         }
     }
