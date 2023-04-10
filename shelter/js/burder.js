@@ -9,7 +9,6 @@ let showBurger = (event) => {
             }, 100)
             navContent.classList.add("burger_no_active")
             burger.style.transform = "rotate(0deg)"
-    
             document.body.classList.remove("no_scroll")
         }else{
             navContent.classList.remove("burger_no_active")
@@ -21,9 +20,7 @@ let showBurger = (event) => {
         
 }
 let closeNav = (event) => {
-
     if (event.target.dataset.content != "close") {
-        console.log(event.target)
         setTimeout(() => {
             navContent.classList.remove("burger_active")
         }, 100)
@@ -33,12 +30,7 @@ let closeNav = (event) => {
         document.body.classList.remove("no_scroll")
 
     }
-
-    
 }
 
 burger.addEventListener('click', showBurger)
 wind.addEventListener("click", closeNav)
-
-
-console.log(burger)
