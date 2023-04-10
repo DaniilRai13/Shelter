@@ -62,13 +62,71 @@ let pagination = (obj) => {
     `)
 }
 
-petsArr.forEach(item=>{
+petsArr.forEach(item => {
     pagination(item)
 })
 
-rightArrow.addEventListener("click", ()=>{
-    if(window.innerWidth >=970){
+let height = petsItems.style.top
+let nowPage = 1
+
+leftArrow.addEventListener("click", () => {
+    if (window.innerWidth >= 970 && height > -930 * 6 && height != 0) {
+        height += 932
+        petsItems.style.top = height + "px"
+        // работа с нумерацией страницы
+        nowPage--
+        page.innerHTML = nowPage
+        if (nowPage == 1) {
+            leftArrow.style.borderColor = "#CDCDCD"
+            doubleLeftArrow.style.borderColor = "#CDCDCD"
+            leftArrow.style.color = "#CDCDCD"
+            doubleLeftArrow.style.color = "#CDCDCD"
+
+            leftArrow.classList.remove("active")
+            doubleLeftArrow.classList.remove("active")
+        } else {
+            leftArrow.style.borderColor = "#F1CDB3"
+            doubleLeftArrow.style.borderColor = "#F1CDB3"
+        }
+
+        console.log(height)
+    } else {
+        leftArrow.style.borderColor = "#CDCDCD"
+        doubleLeftArrow.style.borderColor = "#CDCDCD"
+    }
+    if(nowPage<6){
+            rightArrow.style.borderColor = "#F1CDB3"
+            doubleRightArrow.style.borderColor = "#F1CDB3"
+            rightArrow.classList.add("active")
+            doubleRightArrow.classList.add("active")
+    }
+})
+
+rightArrow.addEventListener("click", () => {
+    // изменение цвета левых кнопок
+    leftArrow.style.borderColor = "#F1CDB3"
+    doubleLeftArrow.style.borderColor = "#F1CDB3"
+    leftArrow.style.color = "#000"
+    doubleLeftArrow.style.color = "#000"
+    // условие
+    if (window.innerWidth >= 970 && height > -930 * 5) {
+        height -= 932
+        petsItems.style.top = height + "px"
+        nowPage++
+        console.log(nowPage)
+
+        page.innerHTML = nowPage
+
+        leftArrow.classList.add("active")
+        doubleLeftArrow.classList.add("active")
+        console.log(height)
         
+    }
+    if (nowPage == 6 || nowPage == 8 || nowPage == 16) {
+        rightArrow.style.borderColor = "#CDCDCD"
+        doubleRightArrow.style.borderColor = "#CDCDCD"
+        rightArrow.classList.remove("active")
+        doubleRightArrow.classList.remove("active")
     }
 })
 
