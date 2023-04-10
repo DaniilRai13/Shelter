@@ -5,7 +5,7 @@
     padding: 5rem 0 11.45rem 0;
 
     @media @table {
-        padding-bottom: 74px;
+        padding-bottom: 169px;
     }
 
     @media @mobile-sm {
@@ -24,7 +24,7 @@
             letter-spacing: 0.06em;
             color: #545454;
 
-            @media @table {
+            @media (max-width:969px), @table {
                 margin-bottom: 12px;
             }
 
@@ -41,9 +41,9 @@
             align-items: center;
             width: 100%;
             overflow: hidden;
-            height: 941px;
+            height: 1024px;
             @media (max-width:969px), @table {
-                height: 1474px;
+                height: 1379px;
             }
             
             .pets_items {
@@ -110,8 +110,9 @@
 
             }
 
-            
+
         }
+
         .pets_pagination {
             display: flex;
             margin-top: 2.6rem;
@@ -120,8 +121,11 @@
             left: 50%;
             bottom: -85px;
             transform: translateX(-50%);
+
             @media @table {
                 margin-top: 18px;
+                bottom: -95px;
+
             }
 
             @media @mobile-sm {
