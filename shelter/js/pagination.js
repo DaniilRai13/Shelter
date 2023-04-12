@@ -5,9 +5,12 @@ const leftArrow = document.querySelector(".left")
 const doubleLeftArrow = document.querySelector(".double_left")
 const rightArrow = document.querySelector(".right")
 const doubleRightArrow = document.querySelector(".double_right")
-
 const MAIN_WIDTH = 1280
 const TABLE_WIDTH = 970
+
+const MAIN_PAGES = 6
+const TABLE_PAGES = 8
+const MOBILE_PAGES = 16
 
 let petsArr = []
 let tempDataPets = dataPets
@@ -62,7 +65,7 @@ let pagination = (obj) => {
     `)
 }
 
-petsArr.forEach(item=>{
+petsArr.forEach(item => {
     pagination(item)
 })
 
@@ -70,64 +73,156 @@ let height = petsItems.style.top
 let nowPage = 1
 
 leftArrow.addEventListener("click", () => {
-    if (window.innerWidth >= 970 && height > -930 * 6 && height != 0) {
+    if (window.innerWidth - 17 >= 970 && height > -930 * 6 && nowPage > 1) {
         height += 932
         petsItems.style.top = height + "px"
         // работа с нумерацией страницы
         nowPage--
         page.innerHTML = nowPage
         if (nowPage == 1) {
-            leftArrow.style.borderColor = "#CDCDCD"
-            doubleLeftArrow.style.borderColor = "#CDCDCD"
-            leftArrow.style.color = "#CDCDCD"
-            doubleLeftArrow.style.color = "#CDCDCD"
-
             leftArrow.classList.remove("active")
             doubleLeftArrow.classList.remove("active")
         } else {
-            leftArrow.style.borderColor = "#F1CDB3"
-            doubleLeftArrow.style.borderColor = "#F1CDB3"
+            leftArrow.classList.add("active")
+            doubleLeftArrow.classList.add("active")
         }
 
         console.log(height)
+    } else if (window.innerWidth - 17 > 657 && height > -1392 * 8 && nowPage > 1) {
+        height += 1395
+        petsItems.style.top = height + "px"
+        // работа с нумерацией страницы
+        nowPage--
+        page.innerHTML = nowPage
+        if (nowPage == 1) {
+            leftArrow.classList.remove("active")
+            doubleLeftArrow.classList.remove("active")
+        } else {
+            leftArrow.classList.add("active")
+            doubleLeftArrow.classList.add("active")
+        }
+    } else if (window.innerWidth - 17 < 657 && height > -1392 * 16 && nowPage > 1) {
+        height += 1395
+        petsItems.style.top = height + "px"
+        // работа с нумерацией страницы
+        nowPage--
+        page.innerHTML = nowPage
+        if (nowPage == 1) {
+            leftArrow.classList.remove("active")
+            doubleLeftArrow.classList.remove("active")
+        } else {
+            leftArrow.classList.add("active")
+            doubleLeftArrow.classList.add("active")
+        }
     } else {
-        leftArrow.style.borderColor = "#CDCDCD"
-        doubleLeftArrow.style.borderColor = "#CDCDCD"
+        leftArrow.classList.remove("active")
+        doubleLeftArrow.classList.remove("active")
     }
-    if(nowPage<6){
-            rightArrow.style.borderColor = "#F1CDB3"
-            doubleRightArrow.style.borderColor = "#F1CDB3"
-            rightArrow.classList.add("active")
-            doubleRightArrow.classList.add("active")
+    console.log(height)
+
+    if (window.innerWidth - 17 >= 970 && nowPage < 6 || window.innerWidth - 17 > 657 && nowPage < 8 || window.innerWidth - 17 <= 657 && nowPage < 16) {
+        rightArrow.classList.remove("no_active")
+        doubleRightArrow.classList.remove("no_active")
+        rightArrow.classList.add("active")
+        doubleRightArrow.classList.add("active")
     }
+    // else if (window.innerWidth - 17 > 657 && nowPage < 8) {
+    //     rightArrow.classList.remove("no_active")
+    //     doubleRightArrow.classList.remove("no_active")
+    //     rightArrow.classList.add("active")
+    //     doubleRightArrow.classList.add("active")
+    // } else if (window.innerWidth - 17 <= 657 && nowPage < 16) {
+    //     rightArrow.classList.remove("no_active")
+    //     doubleRightArrow.classList.remove("no_active")
+    //     rightArrow.classList.add("active")
+    //     doubleRightArrow.classList.add("active")
+    // }
 })
 
 rightArrow.addEventListener("click", () => {
-    // изменение цвета левых кнопок
-    leftArrow.style.borderColor = "#F1CDB3"
-    doubleLeftArrow.style.borderColor = "#F1CDB3"
-    leftArrow.style.color = "#000"
-    doubleLeftArrow.style.color = "#000"
+    leftArrow.classList.add("active")
+    doubleLeftArrow.classList.add("active")
+    console.log(nowPage, height)
     // условие
-    if (window.innerWidth >= 970 && height > -930 * 5) {
+    debugger
+    if (window.innerWidth - 17 >= 970 && height > -930 * 5) {
+        console.log(222222222)
+
         height -= 932
         petsItems.style.top = height + "px"
         nowPage++
-        console.log(nowPage)
-
         page.innerHTML = nowPage
 
         leftArrow.classList.add("active")
         doubleLeftArrow.classList.add("active")
         console.log(height)
+    } else if (window.innerWidth - 17 > 657 && window.innerWidth - 17 < 970 && height > -1392 * 7) {
+        height -= 1395
+        petsItems.style.top = height + "px"
+        nowPage++
+        page.innerHTML = nowPage
 
+        leftArrow.classList.add("active")
+        doubleLeftArrow.classList.add("active")
+    } else if (window.innerWidth - 17 < 657 && height > -1392 * 15) {
+        height -= 1395
+        petsItems.style.top = height + "px"
+        nowPage++
+        page.innerHTML = nowPage
+
+        leftArrow.classList.add("active")
+        doubleLeftArrow.classList.add("active")
     }
-    if (nowPage == 6 || nowPage == 8 || nowPage == 16) {
-        rightArrow.style.borderColor = "#CDCDCD"
-        doubleRightArrow.style.borderColor = "#CDCDCD"
+
+    if (window.innerWidth - 17 >= 970 & nowPage == 6 || window.innerWidth - 17 > 657 & nowPage == 8 || window.innerWidth - 17 < 657 & nowPage == 16) {
         rightArrow.classList.remove("active")
         doubleRightArrow.classList.remove("active")
+        rightArrow.classList.add("no_active")
+        doubleRightArrow.classList.add("no_active")
     }
 })
+doubleLeftArrow.addEventListener("click", () => {
+    leftArrow.classList.remove("active")
+    doubleLeftArrow.classList.remove("active")
 
+    rightArrow.classList.remove("no_active")
+    doubleRightArrow.classList.remove("no_active")
+    rightArrow.classList.add("active")
+    doubleRightArrow.classList.add("active")
+
+    petsItems.style.top = 0
+    nowPage = 1
+    height = 0
+    page.innerHTML = nowPage
+
+    console.log(nowPage)
+})
+doubleRightArrow.addEventListener("click", () => {
+    rightArrow.classList.add("no_active")
+    doubleRightArrow.classList.add("no_active")
+    rightArrow.classList.remove("active")
+    doubleRightArrow.classList.remove("active")
+
+    leftArrow.classList.add("active")
+    doubleLeftArrow.classList.add("active")
+    if (window.innerWidth - 17 >= 970) {
+        nowPage = 6
+        page.innerHTML = nowPage
+
+        petsItems.style.top = -932 * (nowPage-1) + "px"
+        height = -932 * (nowPage-1)
+
+    } else if (window.innerWidth - 17 > 657) {
+        nowPage = 8
+        page.innerHTML = nowPage
+
+        petsItems.style.top = -1395 * (nowPage-1) + "px"
+        height = -1395 * (nowPage-1)
+    } else if (window.innerWidth - 17 < 657) {
+        nowPage = 16
+        page.innerHTML = nowPage
+        petsItems.style.top = -1395 * (nowPage-1) + "px"
+        height = -1395 * (nowPage-1)
+    }
+})
 console.log(petsArr)
