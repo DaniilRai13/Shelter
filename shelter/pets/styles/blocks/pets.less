@@ -2,7 +2,7 @@
 
 .pets {
     background: #F6F6F6;
-    padding: 5rem 0 11.45rem 0;
+    padding: 5rem 0 13rem 0;
 
     @media @table {
         padding-bottom: 169px;
@@ -41,7 +41,7 @@
             align-items: center;
             width: 100%;
             overflow: hidden;
-            height: 1024px;
+            height: 916px;
             @media (max-width:969px), @table {
                 height: 1379px;
             }
@@ -119,13 +119,12 @@
             grid-gap: 15px;
             position: absolute;
             left: 50%;
-            bottom: -85px;
+            bottom: -110px;
             transform: translateX(-50%);
 
             @media @table {
                 margin-top: 18px;
                 bottom: -95px;
-
             }
 
             @media @mobile-sm {
@@ -165,11 +164,21 @@
                 color: #292929;
                 border-color: #F1CDB3;
                 transition: .2s linear;
-
-                &:hover {
+            }
+            .active{
+                transition: .2s linear;
+                border-color: #F1CDB3;
+                color:#000;
+                &:hover{
                     background: #F1CDB3;
                 }
             }
+            .no_active{
+                border-color: #CDCDCD;
+                color:#CDCDCD;
+            }
+
+
         }
     }
 }

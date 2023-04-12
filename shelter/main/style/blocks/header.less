@@ -1,7 +1,8 @@
 // main: ../style.less
-header{
+header {
     padding-top: 30px;
 }
+
 .header_inner {
     display: flex;
     font-style: normal;
@@ -49,28 +50,66 @@ header{
         }
     }
 
-    svg {
+    .burger {
         display: none;
-        @media @table-sm{
+        @media (max-width:767px) {
+            position: relative;
+            z-index: 10;
             display: block;
+            cursor: pointer;
+            transform:none;
+            transition: transform .3s;
+
+            svg{
+                position: relative;
+                z-index: -1;
+            }
         }
     }
+
 
     .nav {
         @media @table {
             margin-top: -3px;
         }
 
-        @media @table-sm {
-            display: none;
+        @media (max-width:767px) {
+            height: 100vh;
+            position: fixed;
+            z-index: 9;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            margin: 0;
+            background: #292929;
+            opacity: inherit;
+            transition: all .1s;
         }
 
         ul {
             display: flex;
             padding: 0;
 
+            @media (max-width:767px) {
+                position: relative;
+                top: 50%;
+                transform: translateY(-50%);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin: 0;
+
+            }
+
             li {
                 list-style-type: none;
+
+                @media (max-width:767px) {
+                    font-size: 32px;
+                    line-height: 160%;
+                    color: #CDCDCD;
+                    display: inline;
+                }
 
                 a {
                     position: relative;
@@ -89,6 +128,9 @@ header{
 
                     @media @table {
                         margin-left: 37px;
+                    }
+                    @media (max-width:767px) {
+                        margin-left: 0;
                     }
 
                 }
@@ -113,5 +155,26 @@ header{
 
             }
         }
+
+
     }
+
+    .burger_no_active {
+        @media (max-width:767px) {
+            width: 0;
+            opacity: 0;
+            z-index: -1;
+        }
+
+    }
+
+    .burger_active {
+        @media (max-width:767px) {
+            width: 320px;
+            opacity: 1;
+            z-index: 9;
+        }
+
+    }
+
 }

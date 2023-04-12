@@ -1,0 +1,219 @@
+// main: ../style.less
+
+.modal_window,
+.modal_overlay {
+    opacity: 0;
+    z-index: -1;
+}
+
+.vmodal.open .modal_window,
+.vmodal.open .modal_overlay {
+    opacity: 1;
+    z-index: 11;
+}
+
+.vmodal.open .modal_window {
+    transform: translateY(200px);
+}
+
+.vmodal.open .modal_overlay {
+    background: rgba(0, 0, 0, 0.5);
+
+}
+
+.vmodal.hide .modal_window,
+.vmodal.hide .modal_overlay {
+    opacity: 1;
+    z-index: 11;
+}
+
+.vmodal.hide .modal_window {
+    transform: translateY(-500px);
+}
+
+.vmodal.hide .modal_overlay {
+    background: rgba(0, 0, 0, 0);
+}
+
+.modal_overlay {
+    position: fixed;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0);
+    transition: .3s ease-in;
+}
+
+.modal_window {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    width: 900px;
+    border-radius: 10px;
+    background: #fff;
+    margin: 0 auto;
+    transform: translateY(-500px);
+    transition: .3s ease-in;
+
+    @media @notebook {
+        width: 650px;
+    }
+
+    @media @table {
+        width: 630px;
+    }
+
+    @media(max-width:755px) {
+        width: 80%;
+    }
+
+    @media (max-width:700px),
+    @mobile-sm {
+        width: 280px;
+    }
+
+    @media @mobile-sm {
+        width: 240px;
+    }
+
+    .modal_image {
+        width: 500px;
+        height: 500px;
+        border-radius: 10px;
+
+        @media @notebook,
+        @table {
+            width: 350px;
+            height: 350px;
+        }
+
+        @media(max-width:755px) {
+            width: 300px;
+            height: 300px;
+        }
+
+        @media (max-width:700px),
+        @mobile-sm {
+            display: none;
+        }
+    }
+
+    .pet_inner {
+        width: 350px;
+        margin-right: 9px;
+
+        @media @notebook {
+            width: 265px;
+        }
+
+        @media @table {
+            width: 260px;
+        }
+
+        @media(max-width:755px) {
+            width: 240px;
+            margin-left: 20px;
+        }
+
+        @media @mobile-sm {
+            width: 100%;
+            padding: 10px;
+            margin-right: 0;
+            margin-left: 0;
+        }
+
+        .pet_name {
+            font-family: 'Georgia';
+            font-size: 35px;
+            line-height: 130%;
+            letter-spacing: 0.06em;
+            color: #000000;
+            margin-bottom: 10px;
+
+            @media @mobile-sm {
+                text-align: center;
+            }
+        }
+
+        .pet_type_breed {
+            font-family: 'Georgia';
+            font-size: 20px;
+            line-height: 115%;
+            letter-spacing: 0.06em;
+            color: #000000;
+            margin-bottom: 40px;
+
+            @media @notebook {
+                margin-bottom: 25px;
+            }
+
+            @media @table {
+                margin-bottom: 20px;
+            }
+
+            @media @mobile-sm {
+                text-align: center;
+            }
+        }
+
+        .pet_description {
+            font-family: 'Georgia';
+            font-size: 15px;
+            line-height: 110%;
+            letter-spacing: 0.06em;
+            margin-bottom: 40px;
+
+            @media @notebook {
+                margin-bottom: 25px;
+            }
+
+            @media @table {
+                font-size: 13px;
+                margin-bottom: 20px;
+            }
+
+            @media @mobile-sm {
+                text-align: justify;
+            }
+        }
+
+        .pet_list_info {
+            padding: 0;
+            margin-left: 20px;
+
+            li {
+                color: #F1CDB3;
+
+                span {
+                    font-family: 'Georgia';
+                    font-size: 15px;
+                    color: #000000;
+                }
+            }
+        }
+    }
+}
+
+.modal_close {
+    width: 52px;
+    height: 52px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(100%, -100%);
+    border: 2px solid #F1CDB3;
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    @media @table-sm {
+        transform: translate(50%, -100%);
+        right: -7px;
+    }
+
+}

@@ -22,19 +22,22 @@
                     </div>
                 </a>
 
-                <nav class="nav">
+                <nav nav class="nav burger_no_active" data-content="close">
                     <ul>
-                        <li><a href="index.html">About the shelter</a></li>
-                        <li><a href="#" class="active">Our pets</a></li>
-                        <li><a href="index.html#help">Help the shelter</a></li>
-                        <li><a href="#contacts">Contacts</a></li>
+                        <li data-content="close"><a href="index.html">About the shelter</a></li>
+                        <li data-content="close"><a href="#" class="active">Our pets</a></li>
+                        <li data-content="close"><a href="index.html#help">Help the shelter</a></li>
+                        <li data-content="close"><a href="#contacts">Contacts</a></li>
                     </ul>
                 </nav>
-                <svg width="30" height="22" viewBox="0 0 30 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <line y1="21" x2="30" y2="21" stroke="#F1CDB3" stroke-width="2" />
-                    <line y1="11" x2="30" y2="11" stroke="#F1CDB3" stroke-width="2" />
-                    <line y1="1" x2="30" y2="1" stroke="#F1CDB3" stroke-width="2" />
-                </svg>
+                <div class="burger" data-content="close">
+                    <svg width="30" height="22" viewBox="0 0 30 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <line y1="21" x2="30" y2="21" stroke="#F1CDB3" stroke-width="2" />
+                        <line y1="11" x2="30" y2="11" stroke="#F1CDB3" stroke-width="2" />
+                        <line y1="1" x2="30" y2="1" stroke="#F1CDB3" stroke-width="2" />
+                    </svg>
+                </div>
+                
             </div>
         </div>
     </header>
@@ -44,61 +47,19 @@
             <div class="pets_inner">
                 <h1 class="pets_title">Our friends who <br> are looking for a house</h1>
                 <div class="pets_list">
-                    <div class="pets_items">
-                        <div class="pets_item">
-                            <img class="pets_item_img" src="pets/images/pets-katrine.png" alt="">
-                            <h2 class="pets_item_name">Katrine</h2>
-                            <a class="pets_slider_btn">Learn more</a>
-                        </div>
-                        <div class="pets_item">
-                            <img class="pets_item_img" src="pets/images/pets-jennifer.png" alt="">
-                            <h2 class="pets_item_name">Jennifer</h2>
-                            <a class="pets_slider_btn">Learn more</a>
-                        </div>
-                        <div class="pets_item">
-                            <img class="pets_item_img" src="pets/images/pets-woody.png" alt="">
-                            <h2 class="pets_item_name">Woody</h2>
-                            <a class="pets_slider_btn">Learn more</a>
-                        </div>
-                        <div class="pets_item">
-                            <img class="pets_item_img" src="pets/images/pets-sophia.png" alt="">
-                            <h2 class="pets_item_name">Sophia</h2>
-                            <a class="pets_slider_btn">Learn more</a>
-                        </div>
-                        <div class="pets_item">
-                            <img class="pets_item_img" src="pets/images/pets-timmy.png" alt="">
-                            <h2 class="pets_item_name">Timmy</h2>
-                            <a class="pets_slider_btn">Learn more</a>
-                        </div>
-                        <div class="pets_item">
-                            <img class="pets_item_img" src="pets/images/pets-charly.png" alt="">
-                            <h2 class="pets_item_name">Charly</h2>
-                            <a class="pets_slider_btn">Learn more</a>
-                        </div>
-                        <div class="pets_item">
-                            <img class="pets_item_img" src="pets/images/pets-scarlet.png" alt="">
-                            <h2 class="pets_item_name">Scarlet</h2>
-                            <a class="pets_slider_btn">Learn more</a>
-                        </div>
-                        <div class="pets_item">
-                            <img class="pets_item_img" src="pets/images/pets-freddi.png" alt="">
-                            <h2 class="pets_item_name">Freddi</h2>
-                            <a class="pets_slider_btn">Learn more</a>
-                        </div>
-                    </div>
-
-                    
+                    <div class="pets_items"></div>
                 </div>
                 <div class="pets_pagination">
                     <span class="double_left pagination">&#60;&#60;</span>
                         <span class="left pagination">&#60;</span>
                         <h3 class="page pagination">1</h3>
-                        <span class="right pagination">&#62;</span>
-                        <span class="double_right pagination">&#62;&#62;</span>
+                        <span class="right pagination active">&#62;</span>
+                        <span class="double_right pagination active">&#62;&#62;</span>
                 </div>
             </div>
         </div>
     </div>
+    
     <footer id="contacts">
         <div class="container">
             <div class="footer_inner">
@@ -133,6 +94,11 @@
             </div>
         </div>
     </footer>
+    <script src="js/dataBase.js"></script>
+    <script src="js/pagination.js"></script>
+    <script src="js/burder.js"></script>
+    <script src="js/modalMethods.js"></script>
+    <script src="js/modal.js"></script>
 </body>
 
 </html>
