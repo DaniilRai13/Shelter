@@ -1,0 +1,184 @@
+// main: ../style.less
+
+.pets {
+    background: #F6F6F6;
+    padding: 5rem 0 13rem 0;
+
+    @media @table {
+        padding-bottom: 169px;
+    }
+
+    @media @mobile-sm {
+        padding: 40px 0 2.6rem 0;
+    }
+
+    .pets_inner {
+        text-align: center;
+        position: relative;
+
+        .pets_title {
+            margin: 0 auto 2.8rem;
+            font-family: 'Georgia';
+            font-size: 2.2rem;
+            line-height: 130%;
+            letter-spacing: 0.06em;
+            color: #545454;
+
+            @media (max-width:969px), @table {
+                margin-bottom: 12px;
+            }
+
+            @media @mobile-sm {
+                font-size: 1.563em;
+                margin-bottom: 27px;
+
+            }
+        }
+
+        .pets_list {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            overflow: hidden;
+            height: 916px;
+            @media (max-width:969px), @table {
+                height: 1379px;
+            }
+
+            .pets_items {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                row-gap: 30px;
+                column-gap: 40px;
+                width: 100%;
+                padding: 15px 0;
+                position: relative;
+                top: 0;
+
+                .pets_item {
+                    background: #ffffff;
+                    border-radius: 0.6rem;
+
+                    .pets_item_img {
+                        margin-bottom: 1.53rem;
+                        border-radius: 0.6em 0.6em 0 0;
+                    }
+
+                    .pets_item_name {
+                        font-family: 'Georgia';
+                        font-size: 1.2rem;
+                        text-align: center;
+                        letter-spacing: 0.06em;
+                        color: #545454;
+                        margin-bottom: 1.87rem;
+
+                        @media @table {
+                            margin-bottom: 2.1rem;
+
+                        }
+                    }
+
+                    .pets_slider_btn {
+                        display: inline-block;
+                        padding: 16px 45px;
+                        font-size: 17px;
+                        letter-spacing: 0.05em;
+                        border: 1px #F1CDB3 solid;
+                        border-radius: 2.2rem;
+                        background: #fff;
+                        cursor: pointer;
+                        transition: background .2s;
+                        margin-bottom: 1.9rem;
+
+                        @media @table {
+                            letter-spacing: 0.06em;
+                            padding: 14px 50px;
+                        }
+                    }
+
+                    &:hover {
+                        cursor: pointer;
+
+                        .pets_slider_btn {
+                            border-color: #FDDCC4;
+                            background: #FDDCC4;
+                        }
+                    }
+                }
+
+            }
+
+
+        }
+
+        .pets_pagination {
+            display: flex;
+            margin-top: 2.6rem;
+            grid-gap: 15px;
+            position: absolute;
+            left: 50%;
+            bottom: -110px;
+            transform: translateX(-50%);
+
+            @media @table {
+                margin-top: 18px;
+                bottom: -95px;
+            }
+
+            @media @mobile-sm {
+                grid-gap: 5px;
+            }
+
+            .pagination {
+                font-family: 'Georgia';
+                font-size: 1.25rem;
+                line-height: 115%;
+                letter-spacing: 0.06em;
+                padding: 0.872rem 0.72rem;
+                border-radius: 50%;
+                border: 2px solid #CDCDCD;
+                color: #CDCDCD;
+                cursor: pointer;
+
+                h6 {
+                    font-size: 22px;
+                }
+            }
+
+            .left,
+            .right {
+                padding: 0.875rem 1.25rem;
+            }
+
+            .page {
+                padding: 0.875rem 1.3rem;
+                color: #292929;
+                background: #F1CDB3;
+                border-color: #F1CDB3;
+            }
+
+            .right,
+            .double_right {
+                color: #292929;
+                border-color: #F1CDB3;
+                transition: .2s linear;
+            }
+            .active{
+                transition: .2s linear;
+                border-color: #F1CDB3;
+                color:#000;
+                &:hover{
+                    background: #F1CDB3;
+                }
+            }
+            .no_active{
+                border-color: #CDCDCD;
+                color:#CDCDCD;
+            }
+
+
+        }
+    }
+}
