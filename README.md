@@ -1,1 +1,3 @@
-[https://clinquant-granita-183ad0.netlify.app/](https://daniilrai13.github.io/Shelter/shelter/] - link to site
+[link ->](https://daniilrai13.github.io/Shelter/shelter/)
+![image](https://github.com/user-attachments/assets/a84ba653-50dd-423d-b957-03233d306156)
+
